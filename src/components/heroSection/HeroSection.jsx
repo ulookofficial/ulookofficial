@@ -6,8 +6,7 @@ const HeroSection = () => {
             {/* Updated Background Image with Parallax Effect */}
             <div 
                 className="w-full h-[60vh] lg:h-[80vh] bg-cover bg-center parallax-effect"
-                style={{ backgroundImage: "url('../img/hero.png
-                    ')" }} // Update this path with your new image
+                style={{ backgroundImage: "url('../img/hero.png')" }} // Update this path with your new image
                 alt="Hero Section"
             >
                 {/* Overlay */}
