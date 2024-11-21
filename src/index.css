@@ -1,0 +1,305 @@
+/*uLOOK official - Rights Reserved 2024*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.produt img{
+    height: auto;
+}
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fb;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+th, td {
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 14px;
+    color: #444;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+th {
+    background-color: #fafafa;
+    color: #555;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+td {
+    color: #666;
+}
+
+/* Hover effects for rows */
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Sorting indicators */
+th.sortable {
+    padding-right: 30px;
+}
+
+th.sortable:after {
+    content: '▲';
+    font-size: 12px;
+    color: #bbb;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+th.sorted-asc:after {
+    content: '▲';
+    color: #ff4081;
+}
+
+th.sorted-desc:after {
+    content: '▼';
+    color: #ff4081;
+}
+
+/* Pagination Controls */
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.pagination button {
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pagination button:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+.pagination button:disabled {
+    background-color: #e0e0e0;
+    color: #b0b0b0;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.pagination button:active {
+    background-color: #ccc;
+    transform: translateY(1px);
+}
+
+.pagination select {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #555;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.pagination select:focus {
+    border-color: #ff4081;
+    outline: none;
+}
+
+/* Search Input Styles */
+.search-input {
+    padding: 12px 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    width: 100%;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #ff4081;
+    outline: none;
+}
+
+/* Button Styles */
+.delete-button {
+    color: #f44336;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.delete-button:hover {
+    color: #d32f2f;
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+
+.add-button {
+    background-color: #ff4081;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-button:hover {
+    background-color: #e03568;
+    transform: scale(1.05);
+}
+
+.add-button:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .container {
+        padding: 15px;
+    }
+
+    th, td {
+        padding: 12px;
+    }
+
+    .search-input {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .pagination button, .pagination select {
+        font-size: 13px;
+        padding: 8px 15px;
+    }
+
+    table {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    table {
+        font-size: 12px;
+        overflow-x: auto;
+        display: block;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    .pagination button, .pagination select {
+        padding: 6px 12px;
+    }
+
+    .search-input {
+        font-size: 12px;
+    }
+}
+
+/* Accessibility Improvements */
+th, td {
+    text-align: center;
+}
+
+.search-input, .pagination select {
+    font-size: 14px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus, .pagination select:focus {
+    outline: none;
+    border-color: #ff4081;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* Toast Messages (Optional) */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.toast.show {
+    opacity: 1;
+}
+
+/* Enhanced delete button styling */
+.delete-button {
+    color: #e74c3c;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.delete-button:hover {
+    color: #c0392b;
+    background-color: rgba(231, 76, 60, 0.1);
+    transform: scale(1.05);
+}
+html {
+    scroll-behavior: smooth;
+}
+.no-scrollbar {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+}
+.no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+}
